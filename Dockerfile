@@ -34,4 +34,6 @@ COPY --from=0 /php-extras.tar.gz .
 RUN tar zxvfp php-extras.tar.gz \
     && rm php-extras.tar.gz
 
+EXPOSE 9501
 
+WORKDIR /data/nginx/wwwroot
