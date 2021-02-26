@@ -1,6 +1,6 @@
 FROM fooz79/php:7.4
 
-ENV SWOOLE_VER=4.5.10
+ENV SWOOLE_VER=4.5.11
 
 RUN apk add --no-cache --virtual .build-deps build-base openssl-dev pcre-dev pcre2-dev zlib-dev php7-dev \
     # pecl install
@@ -11,6 +11,8 @@ RUN apk add --no-cache --virtual .build-deps build-base openssl-dev pcre-dev pcr
     && echo 'extension=xxtea.so' > ./etc/php7/conf.d/xxtea.ini \
     && pecl install ds \
     && echo 'extension=ds.so' > ./etc/php7/conf.d/ds.ini \
+    && pecl install inotify \
+    && echo 'extension=inotify.so' > ./etc/php7/conf.d/inotify.ini \
     && apk del .build-deps \
     && rm -rf /tmp/*
 
