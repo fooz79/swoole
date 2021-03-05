@@ -8,7 +8,7 @@ RUN apk add --no-cache --virtual .build-deps build-base openssl-dev pcre-dev pcr
     && pecl install -D 'enable-openssl="yes" enable-sockets="yes" enable-http2="yes" enable-mysqlnd="yes" enable-swoole-json="yes" enable-swoole-curl="yes" enable-thread-context="yes"' swoole-${SWOOLE_VER} \
     && echo 'extension=swoole.so' > /etc/php7/conf.d/swoole.ini \
     && pecl install -D 'enable-xxtea="yes"' xxtea \
-    && echo 'extension=xxtea.so' > .etc/php7/conf.d/xxtea.ini \
+    && echo 'extension=xxtea.so' > /etc/php7/conf.d/xxtea.ini \
     && pecl install ds \
     && echo 'extension=ds.so' > /etc/php7/conf.d/ds.ini \
     && pecl install inotify \
