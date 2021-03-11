@@ -1,6 +1,6 @@
 FROM fooz79/php:7.4
 
-ENV SWOOLE_VER=4.6.3
+ENV SWOOLE_VER=4.6.4
 
 RUN apk add --no-cache --virtual .build-deps build-base openssl-dev pcre-dev pcre2-dev zlib-dev brotli-dev curl-dev php7-dev \
     # pecl install
