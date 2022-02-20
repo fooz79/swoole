@@ -1,4 +1,4 @@
-FROM fooz79/php:7.4
+FROM fooz79/php:8.0
 
 ENV SWOOLE_VER=4.8.6
 
