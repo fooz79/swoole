@@ -13,7 +13,7 @@ RUN sed -i 's/mirrors.aliyun.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/reposi
     && apk del .build-deps \
     && rm -rf /tmp/*
 
-COPY php8.ini /etc/php8
+COPY php8.ini /etc/php8/php.ini
 
 EXPOSE 9501
 
