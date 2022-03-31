@@ -1,6 +1,6 @@
 FROM fooz79/php:8.0
 
-ENV SWOOLE_VER=4.8.7
+ENV SWOOLE_VER=4.8.8
 
 RUN sed -i 's/mirrors.aliyun.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories \
     && apk add --no-cache --virtual .build-deps build-base openssl-dev pcre-dev pcre2-dev zlib-dev brotli-dev curl-dev php8-dev \
@@ -10,6 +10,8 @@ RUN sed -i 's/mirrors.aliyun.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/reposi
     && echo 'extension=swoole.so' > /etc/php8/conf.d/swoole.ini \
     && pecl8 install inotify \
     && echo 'extension=inotify.so' > /etc/php8/conf.d/inotify.ini \
+    && pecl8 install ds \
+    && echo 'extension=ds.so' > /etc/php8/conf.d/ds.ini \
     && apk del .build-deps \
     && rm -rf /tmp/*
 
